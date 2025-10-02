@@ -2,7 +2,7 @@ import Cookies from "js-cookie";
 
 const fetcherPost = async (url, body) => {
     const res = await fetch(url, {
-        mode: "cors",
+        mode: 'cors',
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
