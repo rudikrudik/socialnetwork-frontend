@@ -1,5 +1,6 @@
 function sendRequest(url, { arg }) {
     return fetch(url, {
+        mode: 'cors',
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
