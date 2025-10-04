@@ -8,6 +8,7 @@ import Profile from "./Layouts/Profile";
 import ProtectedRoute from "./Components/ProtectedRoute";
 import Friends from "./Layouts/Friends";
 import News from "./Layouts/News";
+import Chats from "./Layouts/Chats";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
                         <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>}/>
                         <Route path="/news" element={<ProtectedRoute><News /></ProtectedRoute>}/>
                         <Route path="/friends" element={<ProtectedRoute><Friends /></ProtectedRoute>}/>
+                        <Route path="/chats" element={<ProtectedRoute><Chats /></ProtectedRoute>}/>
                         {/*<Route exact path="/login" element={<Login />} />*/}
                         {/*<Route exact path="/logout" element={<Logout />} />*/}
                     </Routes>

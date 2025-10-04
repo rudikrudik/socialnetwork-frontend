@@ -18,8 +18,8 @@ function LeftMenu () {
                     Profile</p></Link>
                 <p><Link to="/friends"><img width={size} alt="Profile Logo" src={friends}/>
                     Friends</Link></p>
-                <p><img width={size} alt="Profile Logo" src={message}/>
-                    Messages</p>
+                <p><Link to="/chats"><img width={size} alt="Profile Logo" src={message}/>
+                    Messages</Link></p>
                 <p><Link to="/news"><img width={size} alt="Profile Logo" src={posts}/>
                     News</Link></p>
                 <p><img width={size} alt="Profile Logo" src={music}/>
