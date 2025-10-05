@@ -14,7 +14,7 @@ function Chats() {
     const {data: dataA} = useSWR([`${global.config.urls.dialogsUrl}/dialog/${user_id}/list`],
         ([url]) => fetcherGet(url));
 
-    let dataB = CountUnreadMessages()
+    let dataB = CountUnreadMessages(user_id)
 
     console.log("Unread MessagesA", dataA)
     console.log("Unread MessagesB", dataB)

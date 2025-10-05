@@ -7,10 +7,19 @@ import music from "../images/left_menu/music_small.png"
 import photo from "../images/left_menu/photo_small.png"
 import message from "../images/left_menu/message_small.png"
 import {Link} from "react-router-dom";
+import CountUnreadMessages from "../Components/CountUnreadMessages";
+import Cookies from "js-cookie";
 let size = "12%"
 
 
 function LeftMenu () {
+    let unreadMessages = 0
+    const user_id = Cookies.get("user_id");
+
+    if (user_id) {
+        unreadMessages = CountUnreadMessages(user_id)
+    }
+
     return (
         <div className="left_menu">
             <div className="left_menu_block">
@@ -19,7 +28,7 @@ function LeftMenu () {
                 <p><Link to="/friends"><img width={size} alt="Profile Logo" src={friends}/>
                     Friends</Link></p>
                 <p><Link to="/chats"><img width={size} alt="Profile Logo" src={message}/>
-                    Messages</Link></p>
+                    Messages { unreadMessages !== 0 ? <p>{unreadMessages}</p> : ""}</Link></p>
                 <p><Link to="/news"><img width={size} alt="Profile Logo" src={posts}/>
                     News</Link></p>
                 <p><img width={size} alt="Profile Logo" src={music}/>
