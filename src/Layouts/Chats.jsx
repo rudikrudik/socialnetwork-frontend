@@ -2,28 +2,28 @@ import React from "react";
 import '../config';
 import useSWR from "swr";
 import fetcherGet from "../Components/FetcherGET";
-import fetcherPost from "../Components/FetcherPOST";
 import Chat from "./Chat";
 import Cookies from "js-cookie";
-import CountUnreadMessages from "../Components/CountUnreadMessages";
 
 
 function Chats() {
     const user_id = Cookies.get("user_id");
 
-    const {data: dataA} = useSWR([`${global.config.urls.dialogsUrl}/dialog/${user_id}/list`],
+    const {
+        data: chatsData,
+        isLoading: chatsIsLoading,
+        error: chatsError,
+    } = useSWR([`${global.config.urls.dialogsUrl}/dialog/${user_id}/list`],
         ([url]) => fetcherGet(url));
 
-    let dataB = CountUnreadMessages(user_id)
-
-    console.log("Unread MessagesA", dataA)
-    console.log("Unread MessagesB", dataB)
+    if (chatsIsLoading) { return "Loading..."; }
+    if (chatsError) { return "Error..."; }
 
     return (
         <div className="main">
-            {/*data.map((item) => {
-                return <Chat key={item[1]} data={item}/>
-            })*/}
+            {chatsData.map((item) => {
+                return <Chat key={item} data={item}/>
+            })}
         </div>
     )
 }

@@ -5,6 +5,7 @@ import fetcherGet from "../Components/FetcherGET";
 import profile_img from "../images/profile/6.jpg"
 import FriendAdd from "../Components/FriendAdd";
 import FriendRemove from "../Components/FriendRemove";
+import GetLastMessages from "../Components/GetLastMessages";
 
 
 function Chat(props) {
@@ -20,12 +21,15 @@ function Chat(props) {
     if (isLoading) return <div>is loading</div>;
     if (error) return <div>is error</div>;
 
+    let getLastMessage = GetLastMessages(userDialog[1])
+
     return (
         <div className="friend">
             <div className="friend_wrapper">
                 <div className="friend_author">
                     <img alt="avatar" src={profile_img} />
                     <p>{data.first_name} {data.last_name}</p>
+                    {/*<p>{getLastMessage}</p>*/}
                 </div>
                 <div className="friend_edit_menu">
                     { props.data[0] ? "" : <FriendAdd friend_id={props.data[1]}/>}
