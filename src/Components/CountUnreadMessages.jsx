@@ -1,8 +1,6 @@
-import React from "react";
 import '../config';
 import fetcherPost from "./FetcherPOST";
 import useSWR from "swr";
-import fetcherGet from "./FetcherGET";
 
 function CountUnreadMessages(props) {
     let count = 0

@@ -414,6 +414,69 @@ input[type=search]
 
 }
 
+
+.chats {
+    border: 1px solid #403a3b;
+    background-color: #211d1e;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 0 1px #211d1e;
+    display: flex;
+    flex-direction: column;
+}
+
+.chats_author_menu_wrapper {
+    display: flex;
+    border-bottom: 1px solid #403a3b;
+}
+
+.chats_author {
+    display: flex;
+    max-height: 60px;
+}
+
+.chats_message_date {
+    display: flex;
+    color: #9a9797;
+    min-width: 220px;
+    justify-content: end;
+}
+
+.chats_message_date p {
+    align-content: center;
+    margin-right: 20px;
+}
+
+.chats_message {
+    margin: 0 20px 0 20px;
+}
+
+.chats_author p{
+    align-content: center;
+    margin: 10px 10px 10px 10px;
+}
+
+.chats_author img{
+    align-content: center;
+    margin: 10px 10px 10px 10px;
+    border-radius: 10px;
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.chats_edit_menu {
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    align-items: center;
+    margin: 10px;
+}
+
+.chats_buttons {
+
+}
+
 .header_menu_button_signin {
   color: honeydew;
   background: #211d1e;

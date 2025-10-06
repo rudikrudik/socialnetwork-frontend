@@ -4,7 +4,7 @@ import useSWR from "swr";
 import fetcherGet from "../Components/FetcherGET";
 import Chat from "./Chat";
 import Cookies from "js-cookie";
-
+import GetLastMessages from "../Components/GetLastMessages";
 
 function Chats() {
     const user_id = Cookies.get("user_id");
