@@ -23,10 +23,10 @@ function Chat(props) {
     if (userIsLoading) return <div>is loading</div>;
     if (userError) return <div>is error</div>;
 
-    if (lastMessages[0].message === undefined) {
+    if (lastMessages[0]?.message === undefined) {
         lastMes = "Hello world"
     } else {
-        lastMes = lastMessages[0].message;
+        lastMes = lastMessages[0]?.message;
     }
 
     return (
