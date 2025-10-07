@@ -14,7 +14,6 @@ let size = "12%"
 
 function LeftMenu () {
     let unreadMessages = 0
-    let strUnreadMessages = ""
     const user_id = Cookies.get("user_id");
 
     const myStyles = {
@@ -24,12 +23,6 @@ function LeftMenu () {
         margin: "auto",
         borderRadius: "8px",
     };
-
-
-    {/*fontSize: "16px",
-    padding: "0px",
-    borderStyle: "solid",
-    borderRadius: "18% 18%",*/}
 
     if (user_id) {
         unreadMessages = CountUnreadMessages(user_id)

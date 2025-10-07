@@ -1,15 +1,14 @@
 import '../config';
-import fetcherPost from "./FetcherPOST";
+import fetcherGet from "./FetcherGET";
 import useSWR from "swr";
-import {useEffect, useState} from "react";
 
-function GetLastMessages(props) {
+function GetLastMessage(props) {
     const {
         data: lastMessageData,
         isLoading: lastMessageIsLoading,
         error: lastMessageError
-    } = useSWR([`${global.config.urls.dialogsUrl}/dialog/${props.from_user}/get/${props.to_user}`],
-        ([url]) => fetcherPost(url));
+    } = useSWR([`${global.config.urls.dialogsUrl}/dialog/lastmessage/${props.fromUser}/get/${props.toUser}`],
+        ([url]) => fetcherGet(url));
 
     if (lastMessageIsLoading) return <div>is loading last message</div>
     if (lastMessageError) return <div>error</div>;
@@ -17,4 +16,4 @@ function GetLastMessages(props) {
     return lastMessageData;
 }
 
-export default GetLastMessages;
+export default GetLastMessage;

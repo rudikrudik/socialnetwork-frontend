@@ -9,7 +9,7 @@ function CountUnreadMessages(props) {
         data: dataUnreadCount,
         isLoading: dataUnreadCountIsLoading,
         error: dataUnreadCountError
-    } = useSWR([`${global.config.urls.unreadMessagesUrl}/get/unredmessages/${props}`],
+    } = useSWR([`${global.config.urls.unreadMessagesUrl}/get/unreadmessages/${props}`],
         ([url]) => fetcherPost(url));
 
     if (dataUnreadCountIsLoading || dataUnreadCountError) {

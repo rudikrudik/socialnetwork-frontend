@@ -438,7 +438,7 @@ input[type=search]
 .chats_message_date {
     display: flex;
     color: #9a9797;
-    min-width: 220px;
+    min-width: 170px;
     justify-content: end;
 }
 
@@ -470,11 +470,11 @@ input[type=search]
     width: 100%;
     justify-content: end;
     align-items: center;
-    margin: 10px;
 }
 
-.chats_buttons {
-
+.chats a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+  color: honeydew;
 }
 
 .header_menu_button_signin {
